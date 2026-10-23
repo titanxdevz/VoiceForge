@@ -1,0 +1,29 @@
+[package]
+name = "VoiceForge"
+version = "1.0.0"
+edition = "2024"
+authors = ["VoiceForge Engineering Team"]
+description = "Production-ready, low-latency, fully local Windows voice changer and DSP studio"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[dependencies]
+cpal = "0.18.2"
+crossbeam-channel = "0.5.17"
+dirs = "7.0.0"
+eframe = "0.31"
+egui = "0.31"
+egui-phosphor = "0.8"
+muda = "0.21.2"
+rodio = "0.23.0"
+rtrb = "0.4.0"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+toml = "1.1.8"
+tray-icon = "0.26.1"
+windows-sys = { version = "0.61.2", features = ["Win32_Media_Audio", "Win32_System_Threading", "Win32_Foundation", "Win32_System_Registry", "Win32_UI_WindowsAndMessaging"] }
